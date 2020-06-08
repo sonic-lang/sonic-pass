@@ -1,0 +1,55 @@
+cabal-version:      2.0
+name:               sonic-pass
+version:            0.1.0.0
+synopsis:           Foundation of sonic passes
+description:        @sonic-pass@ provides a foundations of passes on sonic IR.
+bug-reports:        https://github.com/sonic-lang/sonic-pass/issues
+homepage:           https://github.com/sonic-lang/sonic-pass#readme
+license:            GPL-2
+license-file:       COPYING.md
+author:             coord_e
+maintainer:         coord_e <me@coord-e.com>
+copyright:          Copyright 2020 coord_e
+category:           Language
+build-type:         Simple
+extra-source-files:
+  README.md
+  CHANGELOG.md
+
+-- see .github/workflows
+tested-with:        GHC ==8.4.4 || ==8.6.5 || ==8.8.3 || ==8.10.1
+
+source-repository head
+  type:     git
+  location: https://github.com/sonic-lang/sonic-pass
+
+library
+  hs-source-dirs:     src
+
+  -- cabal-fmt: expand src
+  exposed-modules:
+    Language.Sonic.Compiler.Context
+    Language.Sonic.Compiler.Location
+    Language.Sonic.Compiler.Pass
+    Language.Sonic.Compiler.Path
+    Language.Sonic.Compiler.Path.Constant
+    Language.Sonic.Compiler.Provenance
+    Language.Sonic.Compiler.Unique
+
+  build-depends:
+      base      >=4.11.0 && <5
+    , sonic-ir
+    , text
+
+  default-language:   Haskell2010
+  default-extensions:
+    DeriveDataTypeable
+    DeriveFoldable
+    DeriveFunctor
+    DeriveGeneric
+    DeriveTraversable
+    DuplicateRecordFields
+
+  ghc-options:
+    -Wall -Wcompat -Widentities -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wredundant-constraints
