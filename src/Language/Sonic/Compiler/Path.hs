@@ -54,7 +54,7 @@ localPath = Path (Just Local) . SimplePath Nothing
 data Name (k :: EntityKind)
   = Name Text
   | Unique Unique
-  deriving (Show, Eq, Generic)
+  deriving (Show, Ord, Eq, Generic)
 
 newName :: MonadUnique m => m (Name k)
 newName = Unique <$> unique
