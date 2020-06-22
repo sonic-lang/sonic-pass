@@ -32,6 +32,7 @@ library
     Language.Sonic.Compiler.Location
     Language.Sonic.Compiler.Pass
     Language.Sonic.Compiler.Path
+    Language.Sonic.Compiler.Report
     Language.Sonic.Compiler.Path.Constant
     Language.Sonic.Compiler.Provenance
     Language.Sonic.Compiler.Unique
@@ -40,6 +41,7 @@ library
       base      >=4.11.0 && <5
     , sonic-ir
     , text
+    , membership
 
   default-language:   Haskell2010
   default-extensions:
